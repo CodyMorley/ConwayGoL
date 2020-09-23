@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EF694ED251AB1D400A17CDD /* ConwayGoLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF694EC251AB1D400A17CDD /* ConwayGoLApp.swift */; };
+		5EF694EF251AB1D400A17CDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF694EE251AB1D400A17CDD /* ContentView.swift */; };
+		5EF694F1251AB1D800A17CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF694F0251AB1D800A17CDD /* Assets.xcassets */; };
+		5EF694F4251AB1D800A17CDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF694F3251AB1D800A17CDD /* Preview Assets.xcassets */; };
+		5EF694FF251AB1D800A17CDD /* ConwayGoLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF694FE251AB1D800A17CDD /* ConwayGoLTests.swift */; };
+		5EF6950A251AB1D800A17CDD /* ConwayGoLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69509251AB1D800A17CDD /* ConwayGoLUITests.swift */; };
+		5EF69527251ACF3F00A17CDD /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69526251ACF3F00A17CDD /* GameEngine.swift */; };
+		5EF6952F251ACF5000A17CDD /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6952E251ACF5000A17CDD /* GameBoard.swift */; };
+		5EF69534251ACF6700A17CDD /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69533251ACF6700A17CDD /* Cell.swift */; };
+		5EF69539251ACF8E00A17CDD /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69538251ACF8E00A17CDD /* Vector.swift */; };
+		5EF6953E251AD92500A17CDD /* Vector+GetNeighbors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6953D251AD92500A17CDD /* Vector+GetNeighbors.swift */; };
+		5EF69546251AD9EA00A17CDD /* Vector+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69545251AD9EA00A17CDD /* Vector+Arithmetic.swift */; };
+		5EF6955D251ADDC500A17CDD /* GameBoard+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6955C251ADDC500A17CDD /* GameBoard+Utilities.swift */; };
+		5EF6956E251AEA8A00A17CDD /* GameBoard+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6956D251AEA8A00A17CDD /* GameBoard+Random.swift */; };
+		5EF69573251AEB8D00A17CDD /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69572251AEB8D00A17CDD /* Random.swift */; };
+		5EF6957B251AEDAF00A17CDD /* Cell+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6957A251AEDAF00A17CDD /* Cell+Random.swift */; };
+		5EF69583251AEDE400A17CDD /* Cell+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69582251AEDE400A17CDD /* Cell+States.swift */; };
+		5EF69594251B1D8000A17CDD /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF69593251B1D8000A17CDD /* Atomic.swift */; };
+		5EF6959F251B206D00A17CDD /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6959E251B206D00A17CDD /* Utilities.swift */; };
+		5EF695A4251B24EF00A17CDD /* AboutGOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF695A3251B24EF00A17CDD /* AboutGOL.swift */; };
+		5EF695A9251B260900A17CDD /* GameBoardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF695A8251B260900A17CDD /* GameBoardViews.swift */; };
+		5EF695B1251B2D3700A17CDD /* SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF695B0251B2D3700A17CDD /* SetupViews.swift */; };
+		5EF695B6251B2D5000A17CDD /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF695B5251B2D5000A17CDD /* HelperViews.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EF694FB251AB1D800A17CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EF694E1251AB1D400A17CDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EF694E8251AB1D400A17CDD;
+			remoteInfo = ConwayGoL;
+		};
+		5EF69506251AB1D800A17CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EF694E1251AB1D400A17CDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EF694E8251AB1D400A17CDD;
+			remoteInfo = ConwayGoL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5EF694E9251AB1D400A17CDD /* ConwayGoL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConwayGoL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF694EC251AB1D400A17CDD /* ConwayGoLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConwayGoLApp.swift; sourceTree = "<group>"; };
+		5EF694EE251AB1D400A17CDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5EF694F0251AB1D800A17CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EF694F3251AB1D800A17CDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5EF694F5251AB1D800A17CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF694FA251AB1D800A17CDD /* ConwayGoLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConwayGoLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF694FE251AB1D800A17CDD /* ConwayGoLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConwayGoLTests.swift; sourceTree = "<group>"; };
+		5EF69500251AB1D800A17CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF69505251AB1D800A17CDD /* ConwayGoLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConwayGoLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF69509251AB1D800A17CDD /* ConwayGoLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConwayGoLUITests.swift; sourceTree = "<group>"; };
+		5EF6950B251AB1D800A17CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF69526251ACF3F00A17CDD /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		5EF6952E251ACF5000A17CDD /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		5EF69533251ACF6700A17CDD /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		5EF69538251ACF8E00A17CDD /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		5EF6953D251AD92500A17CDD /* Vector+GetNeighbors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector+GetNeighbors.swift"; sourceTree = "<group>"; };
+		5EF69545251AD9EA00A17CDD /* Vector+Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vector+Arithmetic.swift"; sourceTree = "<group>"; };
+		5EF6955C251ADDC500A17CDD /* GameBoard+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameBoard+Utilities.swift"; sourceTree = "<group>"; };
+		5EF6956D251AEA8A00A17CDD /* GameBoard+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameBoard+Random.swift"; sourceTree = "<group>"; };
+		5EF69572251AEB8D00A17CDD /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		5EF6957A251AEDAF00A17CDD /* Cell+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Random.swift"; sourceTree = "<group>"; };
+		5EF69582251AEDE400A17CDD /* Cell+States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+States.swift"; sourceTree = "<group>"; };
+		5EF69593251B1D8000A17CDD /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
+		5EF6959E251B206D00A17CDD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5EF695A3251B24EF00A17CDD /* AboutGOL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGOL.swift; sourceTree = "<group>"; };
+		5EF695A8251B260900A17CDD /* GameBoardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViews.swift; sourceTree = "<group>"; };
+		5EF695B0251B2D3700A17CDD /* SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViews.swift; sourceTree = "<group>"; };
+		5EF695B5251B2D5000A17CDD /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EF694E6251AB1D400A17CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF694F7251AB1D800A17CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF69502251AB1D800A17CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EF694E0251AB1D400A17CDD = {
+			isa = PBXGroup;
+			children = (
+				5EF694EB251AB1D400A17CDD /* ConwayGoL */,
+				5EF694FD251AB1D800A17CDD /* ConwayGoLTests */,
+				5EF69508251AB1D800A17CDD /* ConwayGoLUITests */,
+				5EF694EA251AB1D400A17CDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EF694EA251AB1D400A17CDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EF694E9251AB1D400A17CDD /* ConwayGoL.app */,
+				5EF694FA251AB1D800A17CDD /* ConwayGoLTests.xctest */,
+				5EF69505251AB1D800A17CDD /* ConwayGoLUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EF694EB251AB1D400A17CDD /* ConwayGoL */ = {
+			isa = PBXGroup;
+			children = (
+				5EF69523251ACC3500A17CDD /* Views */,
+				5EF69525251ACC5700A17CDD /* GameEngine */,
+				5EF69524251ACC4A00A17CDD /* Utilities */,
+				5EF694F2251AB1D800A17CDD /* Preview Content */,
+				5EF6951E251AB20100A17CDD /* Application */,
+				5EF6951A251AB1EC00A17CDD /* Resources */,
+			);
+			path = ConwayGoL;
+			sourceTree = "<group>";
+		};
+		5EF694F2251AB1D800A17CDD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5EF694F3251AB1D800A17CDD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5EF694FD251AB1D800A17CDD /* ConwayGoLTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EF694FE251AB1D800A17CDD /* ConwayGoLTests.swift */,
+				5EF69500251AB1D800A17CDD /* Info.plist */,
+			);
+			path = ConwayGoLTests;
+			sourceTree = "<group>";
+		};
+		5EF69508251AB1D800A17CDD /* ConwayGoLUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5EF69509251AB1D800A17CDD /* ConwayGoLUITests.swift */,
+				5EF6950B251AB1D800A17CDD /* Info.plist */,
+			);
+			path = ConwayGoLUITests;
+			sourceTree = "<group>";
+		};
+		5EF6951A251AB1EC00A17CDD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5EF694F0251AB1D800A17CDD /* Assets.xcassets */,
+				5EF694F5251AB1D800A17CDD /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5EF6951E251AB20100A17CDD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5EF694EC251AB1D400A17CDD /* ConwayGoLApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5EF69523251ACC3500A17CDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5EF694EE251AB1D400A17CDD /* ContentView.swift */,
+				5EF695A3251B24EF00A17CDD /* AboutGOL.swift */,
+				5EF695A8251B260900A17CDD /* GameBoardViews.swift */,
+				5EF695B0251B2D3700A17CDD /* SetupViews.swift */,
+				5EF695B5251B2D5000A17CDD /* HelperViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5EF69524251ACC4A00A17CDD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5EF69572251AEB8D00A17CDD /* Random.swift */,
+				5EF69593251B1D8000A17CDD /* Atomic.swift */,
+				5EF6959E251B206D00A17CDD /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5EF69525251ACC5700A17CDD /* GameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				5EF6954A251ADBD100A17CDD /* Engine */,
+				5EF6954B251ADBE900A17CDD /* Board */,
+				5EF6954C251ADBFB00A17CDD /* Cell */,
+				5EF6954D251ADC0500A17CDD /* BitMap */,
+			);
+			path = GameEngine;
+			sourceTree = "<group>";
+		};
+		5EF6954A251ADBD100A17CDD /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				5EF69526251ACF3F00A17CDD /* GameEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		5EF6954B251ADBE900A17CDD /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				5EF6952E251ACF5000A17CDD /* GameBoard.swift */,
+				5EF6955C251ADDC500A17CDD /* GameBoard+Utilities.swift */,
+				5EF6956D251AEA8A00A17CDD /* GameBoard+Random.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		5EF6954C251ADBFB00A17CDD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5EF69533251ACF6700A17CDD /* Cell.swift */,
+				5EF69582251AEDE400A17CDD /* Cell+States.swift */,
+				5EF6957A251AEDAF00A17CDD /* Cell+Random.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5EF6954D251ADC0500A17CDD /* BitMap */ = {
+			isa = PBXGroup;
+			children = (
+				5EF69538251ACF8E00A17CDD /* Vector.swift */,
+				5EF6953D251AD92500A17CDD /* Vector+GetNeighbors.swift */,
+				5EF69545251AD9EA00A17CDD /* Vector+Arithmetic.swift */,
+			);
+			path = BitMap;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EF694E8251AB1D400A17CDD /* ConwayGoL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EF6950E251AB1D800A17CDD /* Build configuration list for PBXNativeTarget "ConwayGoL" */;
+			buildPhases = (
+				5EF694E5251AB1D400A17CDD /* Sources */,
+				5EF694E6251AB1D400A17CDD /* Frameworks */,
+				5EF694E7251AB1D400A17CDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConwayGoL;
+			productName = ConwayGoL;
+			productReference = 5EF694E9251AB1D400A17CDD /* ConwayGoL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5EF694F9251AB1D800A17CDD /* ConwayGoLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EF69511251AB1D800A17CDD /* Build configuration list for PBXNativeTarget "ConwayGoLTests" */;
+			buildPhases = (
+				5EF694F6251AB1D800A17CDD /* Sources */,
+				5EF694F7251AB1D800A17CDD /* Frameworks */,
+				5EF694F8251AB1D800A17CDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EF694FC251AB1D800A17CDD /* PBXTargetDependency */,
+			);
+			name = ConwayGoLTests;
+			productName = ConwayGoLTests;
+			productReference = 5EF694FA251AB1D800A17CDD /* ConwayGoLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5EF69504251AB1D800A17CDD /* ConwayGoLUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EF69514251AB1D800A17CDD /* Build configuration list for PBXNativeTarget "ConwayGoLUITests" */;
+			buildPhases = (
+				5EF69501251AB1D800A17CDD /* Sources */,
+				5EF69502251AB1D800A17CDD /* Frameworks */,
+				5EF69503251AB1D800A17CDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EF69507251AB1D800A17CDD /* PBXTargetDependency */,
+			);
+			name = ConwayGoLUITests;
+			productName = ConwayGoLUITests;
+			productReference = 5EF69505251AB1D800A17CDD /* ConwayGoLUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EF694E1251AB1D400A17CDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					5EF694E8251AB1D400A17CDD = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					5EF694F9251AB1D800A17CDD = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 5EF694E8251AB1D400A17CDD;
+					};
+					5EF69504251AB1D800A17CDD = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 5EF694E8251AB1D400A17CDD;
+					};
+				};
+			};
+			buildConfigurationList = 5EF694E4251AB1D400A17CDD /* Build configuration list for PBXProject "ConwayGoL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5EF694E0251AB1D400A17CDD;
+			productRefGroup = 5EF694EA251AB1D400A17CDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EF694E8251AB1D400A17CDD /* ConwayGoL */,
+				5EF694F9251AB1D800A17CDD /* ConwayGoLTests */,
+				5EF69504251AB1D800A17CDD /* ConwayGoLUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EF694E7251AB1D400A17CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF694F4251AB1D800A17CDD /* Preview Assets.xcassets in Resources */,
+				5EF694F1251AB1D800A17CDD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF694F8251AB1D800A17CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF69503251AB1D800A17CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EF694E5251AB1D400A17CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF6952F251ACF5000A17CDD /* GameBoard.swift in Sources */,
+				5EF6956E251AEA8A00A17CDD /* GameBoard+Random.swift in Sources */,
+				5EF69583251AEDE400A17CDD /* Cell+States.swift in Sources */,
+				5EF6959F251B206D00A17CDD /* Utilities.swift in Sources */,
+				5EF6953E251AD92500A17CDD /* Vector+GetNeighbors.swift in Sources */,
+				5EF695A9251B260900A17CDD /* GameBoardViews.swift in Sources */,
+				5EF69546251AD9EA00A17CDD /* Vector+Arithmetic.swift in Sources */,
+				5EF695A4251B24EF00A17CDD /* AboutGOL.swift in Sources */,
+				5EF695B6251B2D5000A17CDD /* HelperViews.swift in Sources */,
+				5EF69573251AEB8D00A17CDD /* Random.swift in Sources */,
+				5EF694EF251AB1D400A17CDD /* ContentView.swift in Sources */,
+				5EF69534251ACF6700A17CDD /* Cell.swift in Sources */,
+				5EF69527251ACF3F00A17CDD /* GameEngine.swift in Sources */,
+				5EF6957B251AEDAF00A17CDD /* Cell+Random.swift in Sources */,
+				5EF69539251ACF8E00A17CDD /* Vector.swift in Sources */,
+				5EF694ED251AB1D400A17CDD /* ConwayGoLApp.swift in Sources */,
+				5EF69594251B1D8000A17CDD /* Atomic.swift in Sources */,
+				5EF695B1251B2D3700A17CDD /* SetupViews.swift in Sources */,
+				5EF6955D251ADDC500A17CDD /* GameBoard+Utilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF694F6251AB1D800A17CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF694FF251AB1D800A17CDD /* ConwayGoLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF69501251AB1D800A17CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF6950A251AB1D800A17CDD /* ConwayGoLUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EF694FC251AB1D800A17CDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EF694E8251AB1D400A17CDD /* ConwayGoL */;
+			targetProxy = 5EF694FB251AB1D800A17CDD /* PBXContainerItemProxy */;
+		};
+		5EF69507251AB1D800A17CDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EF694E8251AB1D400A17CDD /* ConwayGoL */;
+			targetProxy = 5EF69506251AB1D800A17CDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5EF6950C251AB1D800A17CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5EF6950D251AB1D800A17CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EF6950F251AB1D800A17CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ConwayGoL/Preview Content\"";
+				DEVELOPMENT_TEAM = H627294WQZ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ConwayGoL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodyMorley.ConwayGoL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5EF69510251AB1D800A17CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ConwayGoL/Preview Content\"";
+				DEVELOPMENT_TEAM = H627294WQZ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ConwayGoL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodyMorley.ConwayGoL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5EF69512251AB1D800A17CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H627294WQZ;
+				INFOPLIST_FILE = ConwayGoLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodyMorley.ConwayGoLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConwayGoL.app/ConwayGoL";
+			};
+			name = Debug;
+		};
+		5EF69513251AB1D800A17CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H627294WQZ;
+				INFOPLIST_FILE = ConwayGoLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodyMorley.ConwayGoLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConwayGoL.app/ConwayGoL";
+			};
+			name = Release;
+		};
+		5EF69515251AB1D800A17CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H627294WQZ;
+				INFOPLIST_FILE = ConwayGoLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodyMorley.ConwayGoLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ConwayGoL;
+			};
+			name = Debug;
+		};
+		5EF69516251AB1D800A17CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H627294WQZ;
+				INFOPLIST_FILE = ConwayGoLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodyMorley.ConwayGoLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ConwayGoL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EF694E4251AB1D400A17CDD /* Build configuration list for PBXProject "ConwayGoL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF6950C251AB1D800A17CDD /* Debug */,
+				5EF6950D251AB1D800A17CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EF6950E251AB1D800A17CDD /* Build configuration list for PBXNativeTarget "ConwayGoL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF6950F251AB1D800A17CDD /* Debug */,
+				5EF69510251AB1D800A17CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EF69511251AB1D800A17CDD /* Build configuration list for PBXNativeTarget "ConwayGoLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF69512251AB1D800A17CDD /* Debug */,
+				5EF69513251AB1D800A17CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EF69514251AB1D800A17CDD /* Build configuration list for PBXNativeTarget "ConwayGoLUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF69515251AB1D800A17CDD /* Debug */,
+				5EF69516251AB1D800A17CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EF694E1251AB1D400A17CDD /* Project object */;
+}
