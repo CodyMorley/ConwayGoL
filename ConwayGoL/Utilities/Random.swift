@@ -19,15 +19,12 @@ public extension Collection where Index == Int {
 }
 
 public struct CAMRandom: RandomNumberGenerator {
-    //MARK: - Properties -
     private(set) var seed: UInt64
     
-    //MARK: - Inits -
     public init(seed: UInt64 = .random(in: 0..<UInt64.max)) {
         self.seed = seed
     }
     
-    //MARK: - Methods -
     public mutating func next() -> UInt64 {
         seed = seed &* multiplier &+ increment
         return seed

@@ -15,12 +15,10 @@ struct GameBoardView: View {
     let isEditable: Bool
     
     var body: some View {
-        GameBoardViewRepresentable(
-            board: self.$board,
-            visibleGrid: self.$visibleGrid,
-            isEditable: isEditable)
-            .aspectRatio(CGFloat(board.width) / CGFloat(board.height),
-                         contentMode: .fit)
+        GameBoardViewRepresentable(board: self.$board,
+                                   visibleGrid: self.$visibleGrid,
+                                   isEditable: isEditable)
+        .aspectRatio(CGFloat(board.width) / CGFloat(board.height), contentMode: .fit)
     }
 }
 
@@ -43,8 +41,7 @@ struct GameBoardViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIBoardView, context: Context) {
         uiView.isEditable = isEditable
-        uiView.boardSize = CGSize(width: board.width,
-                                  height: board.height)
+        uiView.boardSize = CGSize(width: board.width, height: board.height)
         uiView.visibleGrid = visibleGrid
         uiView.setNeedsDisplay()
     }
@@ -57,8 +54,7 @@ class UIBoardView: UIView {
     @Binding var board: GameBoard
     var isEditable: Bool = true
     var visibleGrid: Bool = true
-    lazy var boardSize = CGSize(width: board.width,
-                                height: board.height)
+    lazy var boardSize = CGSize(width: board.width, height: board.height)
     private let gridColor: UIColor = .gray
     
     
@@ -92,15 +88,11 @@ class UIBoardView: UIView {
     @objc private func boardWasTapped(_ gesture: UIGestureRecognizer) {
         guard isEditable else { return }
         let touch = gesture.location(in: self)
-        let size = getCellSize(boardSize: boardSize,
-                               rect: frame)
-        let point = Point(
-            x: Int(touch.x / size.width),
-            y: Int(touch.y / size.height))
-        let touchedRect = CGRect(
-            origin: getCellOrigin(point: point,
-                                  cellSize: size),
-            size: size)
+        let size = getCellSize(boardSize: boardSize, rect: frame)
+        let point = Point(x: Int(touch.x / size.width),
+                          y: Int(touch.y / size.height))
+        let touchedRect = CGRect(origin: getCellOrigin(point: point, cellSize: size),
+                                 size: size)
         
         board.toggleCell(at: point)
         setNeedsDisplay(touchedRect)
@@ -126,17 +118,14 @@ class UIBoardView: UIView {
         
         deadColor.set()
         UIRectFill(rect)
-        if visibleGrid {
-            gridColor.setStroke()
-        }
+        
+        if visibleGrid { gridColor.setStroke() }
         
         for column in 0..<board.width {
             for row in 0..<board.height {
-                let point = Point(x: column,
-                                  y: row)
+                let point = Point(x: column, y: row)
                 guard let cell = board.cell(at: point) else { continue }
-                let origin = getCellOrigin(point: point,
-                                           cellSize: cellSize)
+                let origin = getCellOrigin(point: point, cellSize: cellSize)
                 let cellColor = cell.isAlive ? liveColor : deadColor
                 
                 if visibleGrid {
@@ -144,8 +133,9 @@ class UIBoardView: UIView {
                 } else {
                     cellColor.set()
                 }
-                let cellRect = CGRect(origin: origin,
-                                      size: cellSize)
+                
+                let cellRect = CGRect(origin: origin, size: cellSize)
+                
                 UIRectFill(cellRect)
                 UIRectFrame(cellRect)
             }
@@ -159,13 +149,10 @@ struct GameBoardView_Previews: PreviewProvider {
     static let gridSize = 25
     
     static var previews: some View {
-        GameBoardView(
-            board: Binding(
-                get: { .random(width: gridSize, height: gridSize) },
-                set: { _ in }),
-            visibleGrid: Binding(get: { true }, set: { _ in }),
-            isEditable: true)
-            .previewDevice("iPhone XS")
-            
+        GameBoardView(board: Binding(get: { .random(width: gridSize, height: gridSize) }, set: { _ in }),
+                      visibleGrid: Binding(get: { true }, set: { _ in }),
+                      isEditable: true)
+        .previewDevice("iPhone XS")
+        
     }
 }

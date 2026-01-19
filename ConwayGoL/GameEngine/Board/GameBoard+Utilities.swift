@@ -20,8 +20,7 @@ extension GameBoard {
     func forEach(_ body: (Point) throws -> Void) rethrows {
         for column in 0..<width {
             for row in 0..<height {
-                try body(Point(x: column,
-                               y: row))
+                try body(Point(x: column, y: row))
             }
         }
     }
@@ -37,9 +36,7 @@ extension GameBoard {
     func compactMapToSet<T: Hashable>(_ transform: (Point) throws -> T?) rethrows -> Set<T> {
         var set = Set<T>()
         try self.forEach { point in
-            if let item = try transform(point) {
-                set.insert(item)
-            }
+            if let item = try transform(point) {set.insert(item) }
         }
         return set
     }

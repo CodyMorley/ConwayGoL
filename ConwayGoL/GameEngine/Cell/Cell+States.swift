@@ -11,6 +11,7 @@ extension Cell {
     var isDead: Bool { self == .dead }
     var isAlive: Bool { self == .alive }
     
+    
     mutating func toggle() {
         self = (self == .alive) ? .dead : .alive
     }

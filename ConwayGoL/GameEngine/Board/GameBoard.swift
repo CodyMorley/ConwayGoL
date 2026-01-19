@@ -8,22 +8,6 @@
 import Foundation
 
 struct GameBoard: CustomStringConvertible {
-    //MARK: - Properties -
-    private var cells = [Point : Cell]()
-    private(set) var width: Int = 1
-    private(set) var height: Int = 1
-    private(set) var pop: Int = 0
-    var infinite: Bool = true
-    
-    
-    //MARK: - Inits -
-    init(width: Int = 1, height: Int = 1) {
-        self.width = width
-        self.height = height
-        self.forEach { cells[$0] = .dead }
-    }
-    
-    
     //MARK: - Subscript and String Convertible -
     subscript(_ point: Point) -> Cell {
         get { cells[wrapPoint(point), default: .dead] }
@@ -34,19 +18,34 @@ struct GameBoard: CustomStringConvertible {
         get { cells[Point(x: x, y: y)] }
     }
     
-    var description: String {
-        self.as2DString
-    }
     
+    //MARK: - Properties -
+    private var cells = [Point : Cell]()
+    private(set) var width: Int = 1
+    private(set) var height: Int = 1
+    private(set) var pop: Int = 0
+    var infinite: Bool = true
+    var description: String { self.as2DString }
     var as2DString: String {
         var output = ""
+        
         for y in 0..<height {
             for x in 0..<width {
                 output += (cell(at: Point(x: x, y: y))?.isAlive == true) ? "O" : " "
             }
+            
             output += "\n"
         }
+        
         return output
+    }
+    
+    
+    //MARK: - Inits -
+    init(width: Int = 1, height: Int = 1) {
+        self.width = width
+        self.height = height
+        self.forEach { cells[$0] = .dead }
     }
     
     
@@ -56,6 +55,7 @@ struct GameBoard: CustomStringConvertible {
             let cellIsAlive = self[point].isAlive
             var count = 0
             var cellWillLive: Bool = false
+            
             for neighbor in point.neighbors {
                 if self[neighbor].isAlive == true {
                     count += 1
@@ -68,6 +68,7 @@ struct GameBoard: CustomStringConvertible {
                     break
                 }
             }
+            
             return cellIsAlive != cellWillLive ? point : nil
         }
     }
@@ -81,21 +82,23 @@ struct GameBoard: CustomStringConvertible {
     }
     
     mutating func resize(forNewWidth newWidth: Int, newHeight: Int) {
-        guard newWidth != width || newHeight != height
-        else { return }
+        guard newWidth != width || newHeight != height else { return }
+        
         width = newWidth
         height = newHeight
         pop = 0
+        
         self.forEach { point in
             guard self.contains(point: point) else {
                 self.cells[point] = nil
                 return
             }
+            
             let cell = cells[point] ?? .dead
+            
             cells[point] = cell
-            if cell.isAlive {
-                pop += 1
-            }
+            
+            if cell.isAlive { pop += 1 }
         }
     }
     

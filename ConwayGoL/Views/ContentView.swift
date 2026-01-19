@@ -18,10 +18,46 @@ struct ContentView: View {
     @State private var visibleGrid = false
     
     ///this will keep our framerate formatter from dividing down futher than hundredths of a second/frame.
-    private let framerateFormatter = configure(NumberFormatter()) {
-        $0.maximumFractionDigits = 2
-    }
-    
+    private let framerateFormatter = configure(NumberFormatter()) { $0.maximumFractionDigits = 2 }
+    private let topBlue = Color(UIColor(light: UIColor(red: 0.87,
+                                                       green: 0.93,
+                                                       blue: 1,
+                                                       alpha: 1),
+                                        dark: UIColor(red: 0.08,
+                                                      green: 0.12,
+                                                      blue: 0.2,
+                                                      alpha: 1),
+                                        defaultsToLight: false))
+    private let bottomBlue = Color(UIColor(light: UIColor(red: 0.5,
+                                                          green: 0.6,
+                                                          blue: 0.7,
+                                                          alpha: 1),
+                                           dark: UIColor(red: 0.25,
+                                                         green: 0.3,
+                                                         blue: 0.5,
+                                                         alpha: 1),
+                                           defaultsToLight: false))
+    private let themeGrayscale = Color(UIColor(light: .white,
+                                               dark: .black,
+                                               defaultsToLight: false))
+    private let controlsHeaderBackground = Color(UIColor(light: UIColor(red: 1,
+                                                                        green: 0.96,
+                                                                        blue: 0.89,
+                                                                        alpha: 1),
+                                                         dark: UIColor(red: 0.17,
+                                                                       green: 0.18,
+                                                                       blue: 0.11,
+                                                                       alpha: 1),
+                                                         defaultsToLight: false))
+    private let controlsBackgroundColor = Color(UIColor(light: UIColor(red: 1,
+                                                                       green: 0.97,
+                                                                       blue: 1,
+                                                                       alpha: 1),
+                                                        dark: UIColor(red: 0.14,
+                                                                      green: 0.03,
+                                                                      blue: 0.08,
+                                                                      alpha: 1),
+                                                        defaultsToLight: false))
     ///Color - Definitions for the various UIColors used in the UIKit methods and Colors used in the SwiftUI methods.
     private var defaultButtonBG: Color {
         Color(red: 0.5,
@@ -29,50 +65,6 @@ struct ContentView: View {
               blue: 0.8,
               opacity: 0.5)
     }
-    private let topBlue = Color(UIColor(
-                                    light: UIColor(red: 0.87,
-                                                   green: 0.93,
-                                                   blue: 1,
-                                                   alpha: 1),
-                                    dark: UIColor(red: 0.08,
-                                                  green: 0.12,
-                                                  blue: 0.2,
-                                                  alpha: 1),
-                                    defaultsToLight: false))
-    private let bottomBlue = Color(UIColor(
-                                    light: UIColor(red: 0.5,
-                                                   green: 0.6,
-                                                   blue: 0.7,
-                                                   alpha: 1),
-                                    dark: UIColor(red: 0.25,
-                                                  green: 0.3,
-                                                  blue: 0.5,
-                                                  alpha: 1),
-                                    defaultsToLight: false))
-    private let themeGrayscale = Color(UIColor(
-                                        light: .white,
-                                        dark: .black,
-                                        defaultsToLight: false))
-    private let controlsHeaderBackground = Color(UIColor(
-                                                    light: UIColor(red: 1,
-                                                                   green: 0.96,
-                                                                   blue: 0.89,
-                                                                   alpha: 1),
-                                                    dark: UIColor(red: 0.17,
-                                                                  green: 0.18,
-                                                                  blue: 0.11,
-                                                                  alpha: 1),
-                                                    defaultsToLight: false))
-    private let controlsBackgroundColor = Color(UIColor(
-                                                    light: UIColor(red: 1,
-                                                                   green: 0.97,
-                                                                   blue: 1,
-                                                                   alpha: 1),
-                                                    dark: UIColor(red: 0.14,
-                                                                  green: 0.03,
-                                                                  blue: 0.08,
-                                                                  alpha: 1),
-                                                    defaultsToLight: false))
     
     
     //MARK: - Inits -
@@ -103,24 +95,22 @@ struct ContentView: View {
                 
                 VStack(spacing: 16) {
                     
-                    GameBoardView(
-                        board: self.$gameEngine.board,
-                        visibleGrid: self.$visibleGrid,
-                        isEditable: !self.gameEngine.isRunning)
+                    GameBoardView(board: self.$gameEngine.board,
+                                  visibleGrid: self.$visibleGrid,
+                                  isEditable: !self.gameEngine.isRunning)
                     .border(Color.gray)
                     .shadow(color: Color(white: 1,
-                    opacity: 0.1),
-                    radius: 5,
-                    x: -5,
-                    y: -5)
+                                         opacity: 0.1),
+                            radius: 5,
+                            x: -5,
+                            y: -5)
                     .shadow(color: Color(white: 0,
-                    opacity: 0.3),
-                    radius: 6,
-                    x: 7,
-                    y: 7)
+                                         opacity: 0.3),
+                            radius: 6,
+                            x: 7,
+                            y: 7)
                     .padding(.horizontal, 8)
                     .padding(.top, 12)
-                    
                     
                     List {
                         Section(
@@ -157,24 +147,23 @@ struct ContentView: View {
                         Image(systemName: "info.circle")
                             .foregroundColor(.white)
                             .padding(8)
-                    }.background(Circle().foregroundColor(bottomBlue))
-                    .shadow(color: bottomBlue.opacity(0.5),
-                            radius: 6,
-                            x: 4,
-                            y: 4)
-                    .shadow(color: themeGrayscale.opacity(0.8),
-                            radius: 6,
-                            x: 4,
-                            y: 4)
-                )
+                    }
+                        .background(Circle().foregroundColor(bottomBlue))
+                        .shadow(color: bottomBlue.opacity(0.5),
+                                radius: 6,
+                                x: 4,
+                                y: 4)
+                        .shadow(color: themeGrayscale.opacity(0.8),
+                                radius: 6,
+                                x: 4,
+                                y: 4))
                 .sheet(isPresented: $visibleAbout,
                        content: AboutGOL.init)
             }
         }
     }
     
-    
-    //MARK: - Sub Views -
+    //MARK: - Subviews -
     ///These methods control various elements of the display based on user input or states.
     private func framerateControls() -> some View {
         Group {
@@ -194,6 +183,7 @@ struct ContentView: View {
             }
         }
     }
+    
     private func framerateIndicator() -> some View {
         Group {
             if gameEngine.isRunning {
@@ -205,6 +195,7 @@ struct ContentView: View {
     private func progressionControls() -> some View {
         HStack(alignment: .center, spacing: 20) {
             Spacer()
+            
             Button(action: gameEngine.toggleRunning) {
                 HStack(spacing: 4) {
                     if gameEngine.isRunning {
@@ -216,12 +207,15 @@ struct ContentView: View {
                     }
                 }
             }
+            
             Button(action: gameEngine.advanceGeneration) {
                 HStack(spacing: 2) {
                     Text("Step")
                     Image(systemName: "goforward")
-                }.disabled(gameEngine.isRunning)
+                }
+                .disabled(gameEngine.isRunning)
             }
+            
             Spacer()
         }
     }
@@ -231,17 +225,22 @@ struct ContentView: View {
             Button(action: { self.visiblePopSetup.toggle() }) {
                 HStack(alignment: .center) {
                     Spacer()
+                    
                     Text("Population:")
                         .font(.caption)
+                    
                     Text(String(gameEngine.board.pop))
                         .font(.headline)
                     
                     Spacer()
+                    
                     Divider()
+                    
                     Spacer()
                     
                     Text("Generation:")
                         .font(.caption)
+                    
                     Text(String(gameEngine.generation))
                         .font(.headline)
                     
@@ -249,12 +248,11 @@ struct ContentView: View {
                     
                     indicator(for: visiblePopSetup)
                 }
-            }.buttonStyle(PlainButtonStyle())
-            
-            
-            if visiblePopSetup {
-                PopulationControls(gameEngine: gameEngine)
             }
+            .buttonStyle(PlainButtonStyle())
+            
+            
+            if visiblePopSetup { PopulationControls(gameEngine: gameEngine) }
         }
     }
     
@@ -263,17 +261,20 @@ struct ContentView: View {
             Button(action: { self.visibleBoardSetup.toggle() }) {
                 HStack(alignment: .center) {
                     Spacer()
+                    
                     Text("Current size:")
+                    
                     Text("\(gameEngine.board.width)x\(gameEngine.board.height)")
                         .fontWeight(.bold)
+                    
                     Spacer()
+                    
                     indicator(for: visibleBoardSetup)
                 }
-            }.buttonStyle(PlainButtonStyle())
-            
-            if visibleBoardSetup {
-                SizeSetupView(gameEngine: gameEngine, visibleGrid: $visibleGrid)
             }
+            .buttonStyle(PlainButtonStyle())
+            
+            if visibleBoardSetup { SizeSetupView(gameEngine: gameEngine, visibleGrid: $visibleGrid) }
         }
     }
     
@@ -284,9 +285,9 @@ struct ContentView: View {
             } else {
                 Image(systemName: "chevron.down")
             }
-        }.foregroundColor(.secondary)
+        }
+        .foregroundColor(.secondary)
     }
-    
     
     //MARK: - Helpers -
     ///Changes our current framerate to a string output for convenience.
@@ -294,7 +295,6 @@ struct ContentView: View {
         framerateFormatter.string(from: NSNumber(value: value)) ?? "??"
     }
 }
-
 
 //MARK: - Previews -
 struct ContentView_Previews: PreviewProvider {

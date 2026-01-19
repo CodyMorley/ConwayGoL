@@ -8,9 +8,9 @@
 import Foundation
 
 extension Cell {
-    static func random<RNG: RandomNumberGenerator>(liveChance: Double = 0.5,
-                                                   using rng: inout RNG) -> Cell {
+    static func random<RNG: RandomNumberGenerator>(liveChance: Double = 0.5, using rng: inout RNG) -> Cell {
         let deadness = Double.random(in: 0...1, using: &rng)
+        
         if deadness < liveChance {
             return .alive
         } else {
@@ -20,7 +20,7 @@ extension Cell {
     
     static func random(liveChance: Double = 0.5) -> Cell {
         var rando = CAMRandom()
-        return random(liveChance: liveChance,
-                      using: &rando)
+        
+        return random(liveChance: liveChance, using: &rando)
     }
 }

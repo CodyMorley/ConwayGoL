@@ -16,26 +16,23 @@ extension GameBoard {
         let density = density > maxDensity ? maxDensity : density
         let totalCells = Double(width * height)
         let populatedCells = Int(density * totalCells)
-        var board = GameBoard(width: width,
-                            height: height)
-        
+        var board = GameBoard(width: width, height: height)
         
         func newPoint() -> Point {
-            return Point(
-                x: Int.random(in: 0..<width,
-                              using: &gen),
-                y: Int.random(in: 0..<height,
-                              using: &gen))
+            return Point(x: Int.random(in: 0..<width, using: &gen),
+                         y: Int.random(in: 0..<height, using: &gen))
         }
         
         for _ in 0..<populatedCells {
             var point = newPoint()
+            
             while board.cell(at: point) == .alive {
                 point = newPoint()
             }
-            board.setCell(.alive,
-                        for: point)
+            
+            board.setCell(.alive, for: point)
         }
+        
         return board
     }
     

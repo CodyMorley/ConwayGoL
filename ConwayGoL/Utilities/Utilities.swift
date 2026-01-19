@@ -10,8 +10,7 @@ import SwiftUI
 //MARK: - Extensions -
 extension Optional where Wrapped: Comparable {
     static func < (lhs: Self, rhs: Self) -> Bool {
-        guard let lhs = lhs, let rhs = rhs
-        else { return false }
+        guard let lhs = lhs, let rhs = rhs else { return false }
         return lhs < rhs
     }
 }
@@ -31,12 +30,9 @@ extension UIColor {
             let defaultColor = defaultsToLight ? light : dark
             
             switch traits.userInterfaceStyle {
-            case .light:
-                return light()
-            case .dark:
-                return dark()
-            default:
-                return defaultColor()
+            case .light: return light()
+            case .dark: return dark()
+            default: return defaultColor()
             }
         }
     }

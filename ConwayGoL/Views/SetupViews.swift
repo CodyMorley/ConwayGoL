@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct SizeSetupView: View {
-    //MARK: - Size Setup Types -
+    //MARK: - Types -
     private enum SliderType: String {
-        case width, height
-        
+        case width
+        case height
     }
     
-    
-    //MARK: -Size Setup Properties-
+    //MARK: - Properties-
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject private var gameEngine: GameEngine
     @State private var newWidth: Double
@@ -27,8 +26,7 @@ struct SizeSetupView: View {
         $0.maximumFractionDigits = 0
     }
     
-    
-    //MARK: - Size Setup Inits -
+    //MARK: - Inits -
     init(gameEngine: GameEngine, visibleGrid: Binding<Bool>) {
         self.gameEngine = gameEngine
         self._newWidth = State(initialValue: Double(gameEngine.board.width))
@@ -37,7 +35,6 @@ struct SizeSetupView: View {
     }
     
     
-    //MARK: - Size Setup Body -
     var body: some View {
         VStack(spacing: 8) {
             HStack {
@@ -45,18 +42,27 @@ struct SizeSetupView: View {
                     Text("Show grid")
                 }
             }
+            
             HStack {
                 Toggle(isOn: self.$gameEngine.infinite) {
                     Text("Grid wraps")
                 }
             }
+            
             slider(for: .width)
             slider(for: .height)
-        }.padding()
+        }
+        .padding()
     }
     
+    //MARK: - Public Methods -
+    func resizeBoard() {
+        self.gameEngine.resizeBoard(
+            width: Int(self.newWidth),
+            height: Int(self.newHeight))
+    }
     
-    //MARK: - Size Setup Methods -
+    //MARK: - Private Methods -
     private func slider(for type: SliderType) -> some View {
         let binding: Binding<Double> = {
             switch type {
@@ -73,14 +79,7 @@ struct SizeSetupView: View {
                     .string(from: NSNumber(value: binding.wrappedValue))!)
         }
     }
-    
-    func resizeBoard() {
-        self.gameEngine.resizeBoard(
-            width: Int(self.newWidth),
-            height: Int(self.newHeight))
-    }
 }
-
 
 
 //MARK: - Population Controls -
@@ -95,11 +94,15 @@ struct PopulationControls: View {
     
     var body: some View {
         VStack(spacing: 16) {
+            
             VStack(spacing: 8) {
+                
                 HStack(spacing: 8) {
                     Text("Density:")
+                    
                     Slider(value: $density, in: 0...GameBoard.maxDensity)
-                }.padding()
+                }
+                .padding()
                 
                 HStack {
                     Button(action: {
@@ -112,20 +115,16 @@ struct PopulationControls: View {
                     }
                 }
             }
-        }.buttonStyle(LifeButtonStyle())
+        }
+        .buttonStyle(LifeButtonStyle())
     }
 }
-
-
 
 // MARK: - Previews
 struct SizeSetupView_Previews: PreviewProvider {
     static var previews: some View {
-        SizeSetupView(gameEngine: GameEngine(
-                        board: GameBoard(width: 25,
-                                         height: 25)),
-                        visibleGrid: Binding(get: { return true },
-                                             set: { _ in }))
+        SizeSetupView(gameEngine: GameEngine(board: GameBoard(width: 25, height: 25)),
+                      visibleGrid: Binding(get: { return true }, set: { _ in }))
             .padding()
             .previewLayout(.sizeThatFits)
     }

@@ -20,12 +20,15 @@ struct ColorHeader<NameView: View>: View {
     var body: some View {
         VStack {
             Spacer()
+            
             HStack {
                 nameView
                 Spacer()
             }
+            
             Spacer()
-        }.padding(.all, 0)
+        }
+        .padding(.all, 0)
         .background(FillAll(color: color))
     }
 }

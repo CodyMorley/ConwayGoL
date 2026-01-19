@@ -23,17 +23,14 @@ class GameEngine: ObservableObject {
             buffer.infinite = infinite
         }
     }
-    
     var framerateRange: ClosedRange<Double> { 1...20 }
     var requestedFramerate: Double = 2 {
         didSet { deltaTimeThreshold = getDeltaTimeThreshold() }
     }
-    
+    private let updateThread = DispatchQueue.global()
     private var buffer: GameBoard
     private var lastUpdateTime = CFAbsoluteTimeGetCurrent()
-    private let updateThread = DispatchQueue.global()
     private lazy var deltaTimeThreshold = getDeltaTimeThreshold()
-    
     
     //MARK: - Inits -
     init(board: GameBoard = .init(width: GameBoard.defaultSize,
@@ -47,22 +44,18 @@ class GameEngine: ObservableObject {
     //MARK: --GAME AI CONTROL--
     //MARK: - API -
     func resizeBoard(width: Int, height: Int) {
-        board.resize(forNewWidth: width,
-                     newHeight: height)
+        board.resize(forNewWidth: width, newHeight: height)
         buffer = board
     }
     
     func clear() {
-        board = GameBoard(width: board.width,
-                          height: board.height)
+        board = GameBoard(width: board.width, height: board.height)
         board.infinite = infinite
         generation = 0
     }
     
     func randomize(density: Double) {
-        board = GameBoard.random(width: board.width,
-                                 height: board.height,
-                                 density: density)
+        board = GameBoard.random(width: board.width, height: board.height, density: density)
         board.infinite = infinite
         generation = 0
     }
@@ -72,9 +65,7 @@ class GameEngine: ObservableObject {
     }
     
     func advanceGeneration() {
-        updateThread.async {
-            self.update()
-        }
+        updateThread.async { self.update() }
     }
     
     
@@ -101,24 +92,17 @@ class GameEngine: ObservableObject {
         updateThread.async { [weak self] in
             while self?.isRunning == true {
                 guard let self = self else { return }
-                
                 let currentTime = CFAbsoluteTimeGetCurrent()
                 let deltaTime = currentTime - self.lastUpdateTime
                 
-                if deltaTime < self.deltaTimeThreshold {
-                    continue
-                }
+                if deltaTime < self.deltaTimeThreshold { continue }
                 
                 self.lastUpdateTime = currentTime
+                
                 let computedFramerate = 1 / deltaTime
                 
-                DispatchQueue.main.async {
-                    self.actualFrameRate = computedFramerate
-                }
-                
-                DispatchQueue.global().sync {
-                    self.update()
-                }
+                DispatchQueue.main.async { self.actualFrameRate = computedFramerate }
+                DispatchQueue.global().sync { self.update() }
             }
         }
     }
